@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Sentiment Analysis</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#upload">Upload</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <section class="intro">
+            <h2>Analyze Sentiments Instantly</h2>
+            <p>Upload or paste text to discover its sentiment!</p>
+            <button onclick="scrollToSection('upload')">Get Started</button>
+        </section>
+    </main>
+    <section id="upload" class="form-section">
+        <h2>Upload or Paste Text</h2>
+        <form id="sentimentForm">
+            <textarea id="userText" rows="5" placeholder="Enter your text here..."></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+    </section>
+    <section id="results" class="results-section">
+        <h2>Analysis Results</h2>
+        <div id="resultContainer">
+            <p id="sentimentResult">Your sentiment result will appear here.</p>
+        </div>
+    </section>
+    <footer>
+        <p>© 2024 Sentiment Analysis Project. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
