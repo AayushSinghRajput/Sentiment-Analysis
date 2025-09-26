@@ -1,9 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const cors = require("cors"); // Import CORS
+const cors = require("cors");
+const path = require("path");
+
+// Load environment variables based on NODE_ENV
+require("dotenv").config({
+  path: process.env.NODE_ENV === "production" 
+    ? path.resolve(__dirname, ".env.production")
+    : path.resolve(__dirname, ".env")
+});
+
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5001;
+
+
 
 // Middleware
 app.use(cors()); // Enable CORS for all requests
@@ -19,7 +30,7 @@ app.post("/api/analyze", async (req, res) => {
 
   try {
     // Send the text to the Python API for sentiment analysis
-    const response = await axios.post("http://localhost:8000/predict", {
+    const response = await axios.post(`${process.env.ML_API_URL}/predict`, {
       text,
     });
 

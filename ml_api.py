@@ -22,6 +22,15 @@ def predict_sentiment():
     # Return the sentiment result as JSON
     return jsonify({'sentiment': sentiment})
 
+# Enable CORS to allow requests from different origins
+from flask_cors import CORS
+import os
+
+# Enable CORS for all routes
+CORS(app)
+
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    # Get port from environment variable or use default
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host='0.0.0.0', port=port)
