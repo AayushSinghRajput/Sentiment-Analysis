@@ -12,7 +12,7 @@ const CONFIG = {
     if (this.isDevEnvironment) {
       return 'http://localhost:5001'; // Local Node.js server URL
     } else {
-      return 'https://your-deployed-nodejs-api.onrender.com'; // Replace with your deployed Node.js API URL
+      return 'https://sentiment-analysis-backend-n5o8.onrender.com'; // Replace with your deployed Node.js API URL
     }
   }
 };
